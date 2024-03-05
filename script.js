@@ -40,3 +40,27 @@ async function checkWeather(city) {
 searchBtn.addEventListener("click", () => {
   checkWeather(searchBox.value);
 });
+
+//* Function to get weather based on current location
+async function getWeatherByLocation() {
+  try {
+    const position = await getCurrentLocation();
+    const { latitude, longitude } = position.coords;
+    const response = await fetch(
+      `${apiUrl}&lat=${latitude}&lon=${longitude}&appid=${apiKey}`
+    );
+    const data = await response.json();
+    checkWeather(data.name);
+  } catch (error) {
+    console.error("Error getting location:", error);
+  }
+}
+
+function getCurrentLocation() {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+}
+
+//* Call getWeatherByLocation when the page loads
+window.addEventListener("load", getWeatherByLocation);
