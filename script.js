@@ -77,3 +77,13 @@ function getCurrentLocation() {
 
 //* Call getWeatherByLocation when the page loads
 window.addEventListener("load", getWeatherByLocation);
+
+//*time clock
+function time() {
+  const date = new Date();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  document.querySelector(".time").innerText = `${hours}:${minutes}`;
+}
+time();
+setInterval(date, 100);
