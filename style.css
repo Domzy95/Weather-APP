@@ -13,7 +13,7 @@ body {
 .card {
   width: 90%;
   max-width: 470px;
-  background: linear-gradient(135deg, #c7fe00, #547d8a);
+  background: linear-gradient(135deg, #00b6fe, #2417da);
   color: #fff;
   margin: 100px auto 0;
   border-radius: 20px;
@@ -104,6 +104,12 @@ body {
 }
 
 .time {
+  font-size: 30px;
+  margin-left: 10px;
+  text-align: left;
+  margin-top: 20px;
+}
+.date {
   font-size: 30px;
   margin-left: 10px;
   text-align: left;

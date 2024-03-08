@@ -87,3 +87,11 @@ function time() {
 }
 time();
 setInterval(date, 100);
+//* DATE
+function date() {
+  const date = new Date();
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  document.querySelector(".date").innerText = `${day}.${month}.${year}`;
+}
