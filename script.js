@@ -83,6 +83,9 @@ function time() {
   const date = new Date();
   const hours = date.getHours();
   const minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
   document.querySelector(".time").innerText = `${hours}:${minutes}`;
 }
 time();
